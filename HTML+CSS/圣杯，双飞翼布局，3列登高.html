@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.container{
+		width: 100%;
+		height: 100%;
+		clear:both;
+	}
+	header{
+		width: 100%;
+		height: 50px;
+		background-color: red;
+	}
+	footer{
+		width: 100%;
+		height: 50px;
+		background-color: red;
+		clear:both;
+	}
+	
+	.main{
+		clear:both;
+		background-color: purple;
+		padding:0 300px 0 200px;
+		height: 100%;
+		overflow: hidden;
+	}
+	.left{
+		float: left;
+		width: 200px;
+		background-color: green;
+		margin-left: -100%;
+		position: relative;
+		left:-200px;
+		height: 300px;
+	}
+	.right{
+		float: left;
+		background-color: yellow;
+		width: 300px;
+		margin-left: -300px;
+		position: relative;
+		right: -300px;
+
+	}
+	.content{
+		position: relative;
+		float: left;
+		width: 100%;
+		background-color:blue;
+	}
+/* 通过正负抵消的方式实现3列登高的布局 */
+	.content,.right,.left{
+		padding-bottom: 10000px;
+		margin-bottom: -10000px;
+	}
+
+</style>
+<body>
+<!-- 三列登高/有名的圣杯布局,与双飞翼布局都是中间自适应，两侧区块固定，区别主要是在content部分，一个使用的是padding一个是margin
+使用padding除了margin拉过来之外，还需要position定位负本身宽度一次，margin先确定content的双飞翼个人更喜欢，少一步position -->
+	<div class="container">
+		<header>!</header>
+		<section class="main">
+			<div class="content">2</div>
+			<div class="left">1</div>
+			<div class="right">3</div>
+		</section>
+		<footer>!</footer>
+
+	</div>
+</body>
+</html>
