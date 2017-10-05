@@ -1,0 +1,47 @@
+1、边框
+    边框圆角：
+        border-radius:30px;
+        border-radius:30px 40px 50px 60px;
+        赋值规律： 从左上开始，顺时针赋值，如果这个角没有值 ，去对角；
+        border-radius: 40px/60px;
+    边框阴影：
+        box-shadow: 水平位移  垂直位移  模糊程度  阴影大小  阴影颜色  外/内阴影(inset)
+
+    边框图片：
+        border-image-source: 图片路径
+        border-image-slice: 裁剪
+        border-image-width: 边框宽度
+        border-image-repeat: 边框图片的平铺
+            repeat:  图片显示不完整
+            round: 图片平铺 优化了，图片会完整显示
+            stretch: 拉伸
+
+    2、背景：
+        背景可以改变大小，可以有多个背景
+        background-size:  30px 30px;
+        background-size:  30% 30%;
+        background-size:  cover; 覆盖
+        background-size:  contain; 包含
+
+        可以有多个背景:
+            多个背景按照正常的语法格式书写，每个背景使用逗号隔开
+
+
+       背景原点：
+         background-origin:
+             content-box
+             padding-box
+             border-box
+
+       背景裁剪
+         background-clip:
+             content-box
+             padding-box
+             border-box
+    3、渐变
+        线性渐变：
+            background-image: linear-gradient(方向，起始颜色，终止颜色);
+
+            方向：to left right bottom top   35deg
+
+        径向渐变：

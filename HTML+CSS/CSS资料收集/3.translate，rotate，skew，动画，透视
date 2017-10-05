@@ -1,0 +1,68 @@
+1、 3d变换
+    rotateX(30deg) 绕着x旋转30deg
+    rotateY(30deg) 绕着y旋转30deg
+    rotateZ(30deg) 绕着z旋转30deg
+    translateX(30px) 沿着x轴移动30px
+    translatey(30px) 沿着y轴移动30px
+    translatez(30px) 沿着Z轴移动30px( 必须给父盒子加透视)
+
+ 2、透视：
+        加给变换元素的父盒子， 设置的是用户眼睛和屏幕的距离；
+        只是视觉上的呈现，不是正真的3d
+        perspective:1000px;
+
+  3、transform-style:preserve-3d;
+        加给变换元素的父盒子，让子盒子存在三维空间中，保持3d效果
+       flat:默认值 （让子盒子被扁平化）
+
+   4、 backface-visibility:hidden; 背面不可见
+
+
+    skew(30deg,30deg);  2d变换 -倾斜
+
+    css3中获取自定义属性的值：content:attr(data-text);
+
+  5、动画：
+      定义：
+        @keyframes 动画名{
+            0%{
+
+            }
+
+            100%{
+
+            }
+
+            或者
+            from{}
+            to{}
+        }
+
+        动画调用：
+            animation: 动画名称 动画时间  执行次数  运动曲线 延迟执行 结束后状态 是否反向；
+                inifnite: 无限次
+                alternate: 反向执行
+                forwards: 保持结束后的状态
+                backwards: 保持动起开始前的状态
+                steps(5): 让动画分步执行；
+
+                动画详细属性：
+                    animation-name:动画名称
+                    animation-duration:持续时间
+                    animation-iteration-count:执行次数
+                    animation-timing-function:运动曲线
+                    animation-fill-mode:结束状态
+                    animation-direction: 动画方向
+                    animation-delay: 延迟时间
+
+
+                多列：（了解）
+                    -webkit-column-count:列数
+                    -webkit-column-rule:分割线样式
+                    -webkit-column-width:列宽
+                    -webkit-column-gap:列间距
+                    -webkit-column-span:跨列 all 跨所有列
+
+
+
+
