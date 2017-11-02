@@ -85,15 +85,29 @@ app.use(session({
 }));
 
 app.get('/awesome', function(req, res){
- if(req.session.lastPage) { 
- console.log('Last page was: ' + req.session.lastPage + ".");
-  }
-  req.session.lastPage = '/awesome'; res.send("You're Awesome. And the session expired time is: " + req.session.cookie.maxAge); });
- app.get('/radical', function(req, res){ 
- if (req.session.lastPage) { console.log('Last page was: ' + req.session.lastPage + "."); }
- req.session.lastPage = '/radical'; res.send('What a radical visit! And the session expired time is: ' + req.session.cookie.maxAge); });
-  app.get('/tubular', function(req, res){ if (req.session.lastPage){ console.log("Last page was: " + req.session.lastPage + "."); }
- req.session.lastPage = '/tubular'; res.send('Are you a suffer? And the session expired time is: ' + req.session.cookie.maxAge); });
+   if(req.session.lastPage) {
+       console.log('Last page was: ' + req.session.lastPage + ".");
+   }
+   req.session.lastPage = '/awesome'; 
+   res.send("You're Awesome. And the session expired time is: " + req.session.cookie.maxAge); 
+});
+
+app.get('/radical', function(req, res){ 
+   if(req.session.lastPage) { 
+       console.log('Last page was: ' + req.session.lastPage + "."); 
+    }
+   req.session.lastPage = '/radical'; 
+   res.send('What a radical visit! And the session expired time is: ' + req.session.cookie.maxAge); 
+});
+  
+app.get('/tubular', function(req, res){ 
+    if(req.session.lastPage){
+        console.log("Last page was: " + req.session.lastPage + "."); 
+    }
+ req.session.lastPage = '/tubular'; 
+ res.send('Are you a suffer? And the session expired time is: ' + req.session.cookie.maxAge); 
+ });
+ 
  app.listen(5000);
 ```
 最后，在存入数据之后，可以使用Robomongo查看存入的数据，并且可以看见，数据过期的时间
