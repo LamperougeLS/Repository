@@ -1,35 +1,35 @@
 # 1.方法定义
-    call方法:
-语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
-定义：调用一个对象的一个方法，以另一个对象替换当前对象。
-说明：
-call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
-如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。
+call方法:
+    语法：call([thisObj[,arg1[, arg2[,   [,.argN]]]]])
+    定义：调用一个对象的一个方法，以另一个对象替换当前对象。
+    说明：
+    call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
+    如果没有提供 thisObj 参数，那么 Global 对象被用作 thisObj。
 
-    apply方法：
-语法：apply([thisObj[,argArray]])
-定义：应用某一对象的一个方法，用另一个对象替换当前对象。
-说明：
-如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。
-如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。
+apply方法：
+    语法：apply([thisObj[,argArray]])
+    定义：应用某一对象的一个方法，用另一个对象替换当前对象。
+    说明：
+    如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。
+    如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。
 
 # 2.它们各自的定义：
 
-apply：应用某一对象的一个方法，用另一个对象替换当前对象。例如：B.apply(A, arguments);即A对象应用B对象的方法。
+    apply：应用某一对象的一个方法，用另一个对象替换当前对象。例如：B.apply(A, arguments);即A对象应用B对象的方法。
 
-call：调用一个对象的一个方法，以另一个对象替换当前对象。例如：B.call(A, args1,args2);即A对象调用B对象的方法。
+    call：调用一个对象的一个方法，以另一个对象替换当前对象。例如：B.call(A, args1,args2);即A对象调用B对象的方法。 
 
-    它们的共同之处：
+它们的共同之处：
 
-都“可以用来代替另一个对象调用一个方法，将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象”。
+    都“可以用来代替另一个对象调用一个方法，将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象”。
 
-    它们的不同之处：
+它们的不同之处：
 
-apply：最多只能有两个参数——新this对象和一个数组argArray。如果给该方法传递多个参数，则把参数都写进这个数组里面，当然，即使只有一个参数，也要写进数组里。如果argArray不是一个有效的数组或arguments对象，那么将导致一个TypeError。如果没有提供argArray和thisObj任何一个参数，那么Global对象将被用作thisObj，并且无法被传递任何参数。
+    apply：最多只能有两个参数——新this对象和一个数组argArray。如果给该方法传递多个参数，则把参数都写进这个数组里面，当然，即使只有一个参数，也要写进数组里。如果argArray不是一个有效的数组或arguments对象，那么将导致一个TypeError。如果没有提供argArray和thisObj任何一个参数，那么Global对象将被用作thisObj，并且无法被传递任何参数。
 
-call：它可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。这个方法主要用在js对象各方法相互调用的时候，使当前this实例指针保持一致，或者在特殊情况下需要改变this指针。如果没有提供thisObj参数，那么 Global 对象被用作thisObj。 
+    call：它可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。这个方法主要用在js对象各方法相互调用的时候，使当前this实例指针保持一致，或者在特殊情况下需要改变this指针。如果没有提供thisObj参数，那么 Global 对象被用作thisObj。 
 
-实际上，apply和call的功能是一样的，只是传入的参数列表形式不同。
+    实际上，apply和call的功能是一样的，只是传入的参数列表形式不同。
 
 # 3.　示例代码：
 
@@ -106,10 +106,12 @@ c2.showAdd(3,1);    //4
  
 （2）Array.prototype.push可以实现两个数组的合并
 同样push方法没有提供push一个数组，但是它提供了push(param1,param2...paramN)，同样也可以用apply来转换一下这个数组，即：
- 1.var arr1=new Array("1","2","3");
- 2.var arr2=new Array("4","5","6");
- 3.Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度
- 也可以这样理解，arr1调用了push方法，参数是通过apply将数组转换为参数列表的集合
+```bash
+var arr1=new Array("1","2","3");
+var arr2=new Array("4","5","6");
+Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度
+```
+也可以这样理解，arr1调用了push方法，参数是通过apply将数组转换为参数列表的集合
  
  通常在什么情况下，可以使用apply类似Math.max等之类的特殊用法：
   一般在目标函数只需要n个参数列表，而不接收一个数组的形式，可以通过apply的方式巧妙地解决这个问题。
