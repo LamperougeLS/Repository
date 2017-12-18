@@ -38,8 +38,10 @@ console.log(f1); // function f1() {}
 console.log(f2); // undefined
 function f1() {}
 var f2 = function() {}
-```　
+```
+
 　只所以会有以上的打印结果，是由于js中的函数提升导致代码实际上是按照以下来执行的：
+ 
 ```bash
 function f1() {} // 函数提升，整个代码块提升到文件的最开始　　　　
 console.log(f1);
