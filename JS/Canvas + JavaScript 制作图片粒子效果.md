@@ -7,8 +7,7 @@
 1:图片是通过image对象形式绘制在画布上的，然后使用Canvas的getImageData接口，获取图像的像素信息。
 
     var imageData=ctx.getImageData(x, y, width, height);
-        参数说明：x，y为画布上的x和y坐标
-　　　　 width，height为获取指定区域图像的信息
+        参数说明：x，y为画布上的x和y坐标, width，height为获取指定区域图像的信息
 
 返回值说明：imageData为返回值，它是一个对象，包含三个属性
 
