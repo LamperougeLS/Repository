@@ -1,4 +1,4 @@
-#  一：background-size： contain 与cover的区别：
+##  一：background-size： contain 与cover的区别：
 作用： 都是将图片以**相同宽高比**缩放以适应整个容器的宽高。
 不同之处在于：
 1.  在no-repeat情况下，如果容器宽高比与图片宽高比不同，
@@ -9,16 +9,17 @@
 
 2.  在repeat情况下：cover:与上述相同；contain:容器内至少有一张完整的图，容器留白区域则平铺背景图，铺不下的再裁掉。
 
-# 二：background-size 在ie7\8的兼容写法：用filter滤镜
+## 二：background-size 在ie7\8的兼容写法：用filter滤镜
 
-css中加入一句：
+  css中加入一句：
 
- filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/xxx.jpg',sizingMethod='scale');
-参数解释：
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/xxx.jpg',sizingMethod='scale');
+  
+  参数解释：
 
-src="图片路径"，可以是相对，也可以是绝对；
+    src="图片路径"，可以是相对，也可以是绝对；
 
-sizingMethod：“scale|crop|image” 可选项。字符串(String)。设置或检索滤镜作用的对象的图片在对象容器边界内的显示方式。
+    sizingMethod：“scale|crop|image” 可选项。字符串(String)。设置或检索滤镜作用的对象的图片在对象容器边界内的显示方式。
 
     crop：剪切图片以适应对象尺寸。 
 
