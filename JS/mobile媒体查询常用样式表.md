@@ -1,5 +1,5 @@
  
- 媒体查询常用样式表：
+    媒体查询常用样式表：
 ```html
 	<link rel="stylesheet" media="all and (orientation:portrait)" href="portrait.css">    // 竖放加载
 	<link rel="stylesheet" media="all and (orientation:landscape)"href="landscape.css">   // 横放加载
