@@ -101,6 +101,20 @@ git add <filename>
 ```bash
 git diff <source_branch> <target_branch>
 ```
+cherry pick 合并单个 commit：
+```bash
+git checkout master
+git cherry-pick XXXXXX
+```
+cherry pick 连续多个commit
+cherry pick 虽好，但一次只能合并一个commit。合并多个就要用到 rebase 了。再次假设想要把 76cada 和 62ecb3 合并到 master 上。
+操作：
+```bash
+git checkout -b newbranch 62ecb3
+git rebase —onto master 76cada^
+//76cada^ 表示从 76cada 的 commit 开始合并（作为新的commit）。这样就完成了 76cada 到 62ecb3
+ 合并到 master。
+```
 
 # 标签
 
