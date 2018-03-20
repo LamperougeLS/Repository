@@ -1,8 +1,9 @@
 # JavaScript面向对象
 
+[原文地址:https://github.com/Nealyang/YOU-SHOULD-KNOW-JS](https://github.com/Nealyang/YOU-SHOULD-KNOW-JS)
+
 ## 前言
 对象(Object)应该算是js中最为重要的部分，也是js中非常难懂晦涩的一部分。更是面试以及框架设计中各出没。写这篇文章，主要参考与JavaScript红宝书（JavaScript高级程序设计 第六章章节）以及各大博主博客。
-[原文地址:https://github.com/Nealyang/YOU-SHOULD-KNOW-JS](https://github.com/Nealyang/YOU-SHOULD-KNOW-JS)
 
 ## 谈谈对象属性的特性
 
