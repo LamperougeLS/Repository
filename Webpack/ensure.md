@@ -1,4 +1,4 @@
- ### webpack异步加载
+ ### webpack异步加载（require.ensure() 是 webpack 特有的，已经被 import() 取代。）
  
  webpack ensure一般用来做代码切割，那这 个家伙到底是用来干嘛的？其实说白了，它就是把js模块给独立导出一个.js文件的，然后使用这个 模块的时候，webpack会构造script dom元素，由浏览器发起异步请求这个js文件。   
       
