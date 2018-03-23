@@ -1,3 +1,6 @@
+
+原地址：<https://www.cnblogs.com/lvyongbo/p/5931636.html>
+
 # Virtual DOM是什么
 
 在之前，React和Ember早就开始用虚拟DOM技术来提高页面更新的速度了。 若想了解它是如何工作的，就要先认清这几个概念：
@@ -91,5 +94,3 @@ new Vue({
 </div>
 ```
 为什么这样做？你可以用全编程语言JavaScript编程，您可以创建工厂式的功能来建立虚拟节点。
-
-原地址：<https://www.cnblogs.com/lvyongbo/p/5931636.html>
