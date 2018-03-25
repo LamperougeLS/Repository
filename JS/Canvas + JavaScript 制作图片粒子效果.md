@@ -1,5 +1,8 @@
 ## Canvas + JavaScript 制作图片粒子效果
  
+原文地址：https://www.cnblogs.com/chunyangji/p/6376966.html
+
+ 
 首先看一下源图和转换成粒子效果的对比图：
 
 ![star](../图片/STAR.png)
