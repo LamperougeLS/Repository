@@ -1,5 +1,7 @@
 ## Node.js 服务器部署之把 Vue 项目部署到线上
 
+原文地址：https://segmentfault.com/a/1190000012861469
+
 ### 项目打包
 
 npm run build后会有一个dist目录，这个文件夹就是我们要部署上线的项目
@@ -101,4 +103,3 @@ server {
 然后通过ftp上传到/etc/nginx/conf.d/目录下
 执行sudo nginx -s reload重启nginx服务器，过个十分钟就应该能正常访问了
  
-原文 地址：https://segmentfault.com/a/1190000012861469
